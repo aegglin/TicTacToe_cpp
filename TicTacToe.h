@@ -1,19 +1,23 @@
 #pragma once
 class TicTacToe {
+public:
+	static constexpr int BOARD_SIZE = 3;
+	static constexpr int NUM_MOVES = 9;
+
+	TicTacToe();
+	char getCurrentPlayer() const;
+	void printBoard() const;
+	char getWinner();
+	void makeMove(const int r, const int c);
+	bool isValidMove(const int r, const int c) const;
+	int getNumMoves() const;
+	char getBoardAt(const int r, const int c) const;
+
 private:
-	char board[3][3];
+	char board[BOARD_SIZE][BOARD_SIZE];
 	const char playerX;
 	const char playerO;
 	char winner;
 	char currentPlayer;
 	int numMoves;
-
-public:
-	TicTacToe();
-	char getCurrentPlayer() const;
-	void printBoard() const;
-	char getWinner();
-	void makeMove(int r, int c);
-	bool isValidMove(int r, int c) const;
-	int getNumMoves() const;
 };

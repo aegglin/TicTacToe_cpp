@@ -4,8 +4,8 @@
 TicTacToe::TicTacToe() 
     : playerX('X'), playerO('O'), winner(' '), currentPlayer(playerX), numMoves(0) 
 {
-    for (int r = 0; r < 3; r++) {
-        for (int c = 0; c < 3; c++) {
+    for (int r = 0; r < TicTacToe::BOARD_SIZE; r++) {
+        for (int c = 0; c < TicTacToe::BOARD_SIZE; c++) {
             board[r][c] = ' ';
         }
     }
@@ -32,12 +32,12 @@ TicTacToe::TicTacToe()
 	}
 
     char TicTacToe::getWinner() {
-        for (int r = 0; r < 3; r++) {
+        for (int r = 0; r < TicTacToe::BOARD_SIZE; r++) {
             if (board[r][0] != ' ' && board[r][0] == board[r][1] && board[r][0] == board[r][2]) {
                 winner = board[r][0];
             }
         }
-        for (int c = 0; c < 3; c++) {
+        for (int c = 0; c < TicTacToe::BOARD_SIZE; c++) {
             if (board[0][c] != ' ' && board[0][c] == board[1][c] && board[0][c] == board[2][c]) {
                 winner = board[0][c];
             }
@@ -50,14 +50,18 @@ TicTacToe::TicTacToe()
         }
         return winner;
     }
+
+    char TicTacToe::getBoardAt(const int r, const int c) const {
+        return board[r][c];
+    }
     
-    void TicTacToe::makeMove(int r, int c) {
+    void TicTacToe::makeMove(const int r, const int c) {
         board[r][c] = currentPlayer;
         numMoves++;
         currentPlayer = currentPlayer == playerX ? playerO : playerX;
     }
 
-    bool TicTacToe::isValidMove(int r, int c) const{
+    bool TicTacToe::isValidMove(const int r,const int c) const{
         if (r < 0 || r > 2 || c < 0 || c > 2) {
             std::cout << "Invalid input, try again" << std::endl;
             return false;

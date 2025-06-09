@@ -1,15 +1,14 @@
 #pragma once
 #include "TicTacToe.h"
-#include <array>
+#include <utility>
 
 class TicTacToeSimulator {
 public:
-	TicTacToeSimulator();
-	TicTacToeSimulator(int numGames);
-	TicTacToe ttt;
+	TicTacToeSimulator(int numGames=10);
+	std::pair<int, int> getRandomMove();
 	char simulateGame();
 	int getNumGames();
-	std::array<int, 2> getSimMove();
+	TicTacToe ttt;
 
 private:
 	int numGames;

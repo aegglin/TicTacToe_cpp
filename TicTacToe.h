@@ -12,6 +12,7 @@ public:
 	bool isValidMove(const int r, const int c) const;
 	int getNumMoves() const;
 	char getBoardAt(const int r, const int c) const;
+	void reset();
 
 private:
 	char board[BOARD_SIZE][BOARD_SIZE];

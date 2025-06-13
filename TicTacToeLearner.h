@@ -8,5 +8,5 @@ public:
 	void learn();
 private:
 	TicTacToeSimulator simulator;
-	std::unordered_map<TicTacToe, float> evals();
+	std::unordered_map<TicTacToe, float> evals;
 };

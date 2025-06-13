@@ -5,6 +5,7 @@
 
 class TicTacToeLearner {
 public:
+	void simulateGames();
 	void learn();
 private:
 	TicTacToeSimulator simulator;

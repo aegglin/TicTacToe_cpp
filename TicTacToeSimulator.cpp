@@ -10,22 +10,6 @@ int TicTacToeSimulator::getNumGames() {
 	return numGames;
 }
 
-std::vector<char> TicTacToeSimulator::simulateGames() {
-
-	TicTacToe ttt;
-	int numGames = TicTacToeSimulator::getNumGames();
-	std::vector<char> winners(numGames);
-
-	char winner = ' ';
-	for (int i = 0; i < numGames; i++) {
-		winner = simulateGame(ttt);
-		winners.push_back(winner);
-		ttt.reset();
-	}
-
-	return winners;
-}
-
 char TicTacToeSimulator::simulateGame(TicTacToe& ttt) {
 	while (ttt.getWinner() == ' ' && ttt.getNumMoves() < TicTacToe::NUM_MOVES) {
 		std::pair<int, int> move = getRandomMove();

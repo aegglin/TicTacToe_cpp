@@ -6,7 +6,6 @@
 class TicTacToeLearner {
 public:
 	void simulateGames();
-	void learn();
 private:
 	TicTacToeSimulator simulator;
 	std::unordered_map<TicTacToe, float> evals;

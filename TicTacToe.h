@@ -13,9 +13,9 @@ public:
 	int getNumMoves() const;
 	char getBoardAt(const int r, const int c) const;
 	void reset();
+	char board[BOARD_SIZE][BOARD_SIZE];
 
 private:
-	char board[BOARD_SIZE][BOARD_SIZE];
 	const char playerX;
 	const char playerO;
 	char winner;

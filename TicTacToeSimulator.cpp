@@ -1,14 +1,9 @@
-
 #include "TicTacToeSimulator.h"
 #include "TicTacToe.h"
 #include <random>
 #include <iostream>
 
-TicTacToeSimulator::TicTacToeSimulator(int numGames) : numGames(numGames){}
-
-int TicTacToeSimulator::getNumGames() {
-	return numGames;
-}
+TicTacToeSimulator::TicTacToeSimulator(const int numGames) : numGames(numGames){}
 
 char TicTacToeSimulator::simulateGame(TicTacToe& ttt) {
 	while (ttt.getWinner() == ' ' && ttt.getNumMoves() < TicTacToe::NUM_MOVES) {
@@ -27,7 +22,7 @@ char TicTacToeSimulator::simulateGame(TicTacToe& ttt) {
 	return ttt.getWinner();
 }
 
-std::pair<int, int> TicTacToeSimulator::getRandomMove() {
+std::pair<int, int> TicTacToeSimulator::getRandomMove() const{
 	std::random_device dev;
 	std::mt19937 gen(dev());
 	std::uniform_int_distribution<> dist(0, 2);

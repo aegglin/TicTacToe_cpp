@@ -5,15 +5,18 @@ public:
 	static constexpr int NUM_MOVES = 9;
 
 	TicTacToe();
-	char getCurrentPlayer() const;
+	inline char getCurrentPlayer() const { return currentPlayer; }
+	inline int getNumMoves() const { return numMoves; };
+	inline char getBoardAt(const int r, const int c) const { return board[r][c]; }
+
 	void printBoard() const;
-	char getWinner();
 	void makeMove(const int r, const int c);
 	bool isValidMove(const int r, const int c) const;
-	int getNumMoves() const;
-	char getBoardAt(const int r, const int c) const;
+	char getWinner();
+
 	void reset();
 	char board[BOARD_SIZE][BOARD_SIZE];
+	bool operator==(const TicTacToe& other) const;
 
 private:
 	const char playerX;

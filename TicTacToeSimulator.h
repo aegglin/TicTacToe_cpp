@@ -5,9 +5,9 @@
 
 class TicTacToeSimulator {
 public:
-	TicTacToeSimulator(int numGames=10);
-	std::pair<int, int> getRandomMove();
-	int getNumGames();
+	TicTacToeSimulator(const int numGames=10);
+	std::pair<int, int> getRandomMove() const;
+	inline int getNumGames() const { return numGames; }
 	char simulateGame(TicTacToe& ttt);
 	TicTacToe ttt;
 

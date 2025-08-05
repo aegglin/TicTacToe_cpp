@@ -1,11 +1,10 @@
 #include <iostream>
-#include "TicTacToeSimulator.h"
-#include "TicTacToe.h"
+#include "TicTacToeLearner.h"
 
 int main()
 {
-    TicTacToeSimulator simulator(10);
-    simulator.simulateGames();
+    TicTacToeLearner learner(30);
+    //learner.simulateGames();
 
     //TicTacToe ttt;
     //ttt.makeMove(0, 0); // X

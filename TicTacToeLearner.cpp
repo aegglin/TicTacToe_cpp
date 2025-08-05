@@ -1,17 +1,16 @@
 #include "TicTacToeLearner.h"
 
-void TicTacToeLearner::simulateGames() {
+TicTacToeLearner::TicTacToeLearner(const int numGames)
+	: numGames(numGames), simulator(numGames) {}
 
-	TicTacToe ttt;
-	int numGames = simulator.getNumGames();
+void TicTacToeLearner::simulateGames() {
 	std::vector<char> winners(numGames);
+	TicTacToe ttt;
 
 	char winner = ' ';
-	for (int i = 0; i < numGames; i++) {
+	/*for (int i = 0; i < numGames; i++) {
 		winner = simulator.simulateGame(ttt);
 		winners.push_back(winner);
-
-
 		if (winner == ' ' || winner == 'O') {
 			evals.insert_or_assign(simulator.ttt, 0.0);
 		}
@@ -22,6 +21,5 @@ void TicTacToeLearner::simulateGames() {
 			evals.insert_or_assign(simulator.ttt, 0.5);
 		}
 		ttt.reset();
-	}
-
+	}*/
 }
